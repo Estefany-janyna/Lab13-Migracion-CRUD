@@ -12,8 +12,11 @@ namespace sem13.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAB1504-26\\SQLEXPRESS;Initial Catalog=taipedb;User ID=torres;Password=12345;trustservercertificate=True"
-                );
+            //optionsBuilder.UseSqlServer("Server=LAB1504-04\\SQLEXPRESS;Initial Catalog=torresdb;User ID=userTaipe;Password=12345;trustservercertificate=True"
+            // );
+            optionsBuilder.UseSqlServer("Server=LAB1504-04\\SQLEXPRESS; " +
+       "Initial Catalog=torresdb; Integrated Security=True;trustservercertificate=True");
+
         }
 
     }

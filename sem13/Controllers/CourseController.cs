@@ -18,14 +18,12 @@ namespace sem13.Controllers
             _context = context;
         }
 
-        // GET: api/Course
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
         {
             return await _context.Courses.Where(c => c.Active).ToListAsync();
         }
 
-        // GET: api/Course/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Course>> GetCourse(int id)
         {
@@ -39,7 +37,6 @@ namespace sem13.Controllers
             return course;
         }
 
-        // PUT: api/Course/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourse(int id, Course course)
         {
@@ -69,7 +66,6 @@ namespace sem13.Controllers
             return NoContent();
         }
 
-        // POST: api/Course
         [HttpPost]
         public async Task<ActionResult<Course>> PostCourse(Course course)
         {
@@ -79,7 +75,6 @@ namespace sem13.Controllers
             return CreatedAtAction("GetCourse", new { id = course.CourseID }, course);
         }
 
-        // DELETE: api/Course/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCourse(int id)
         {
