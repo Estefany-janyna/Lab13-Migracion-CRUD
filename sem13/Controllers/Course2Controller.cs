@@ -52,6 +52,22 @@ namespace sem13.Controllers
 
         }
 
+        [HttpPost]
+        public void DeleteList(ListCourseDeleteRequest request)
+        {
+            foreach (var courseId in request.CourseIds)
+            {
+                var course = _context.Courses.Find(courseId);
+                if (course != null)
+                {
+                    course.Active = false;
+                    _context.Courses.Update(course);
+
+                }
+            }
+            _context.SaveChanges();
+        }
+
 
 
     }

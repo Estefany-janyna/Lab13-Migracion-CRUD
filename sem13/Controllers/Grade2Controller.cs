@@ -49,6 +49,35 @@ namespace sem13.Controllers
      
         }
 
+        [HttpPost]
+        public void InsertListStudentByGrade(StudentInsertListRequest request)
+        {
+
+            var grade = _context.Grades.Find(request.GradeID);
+            if (grade == null)
+            {
+               //--
+            }
+
+            foreach (var studentRequest in request.Students)
+            {
+                var student = new Student
+                {
+                    FirsName = studentRequest.FirsName,
+                    LastName = studentRequest.LastName,
+                    Phone = studentRequest.Phone,
+                    Email = studentRequest.Email,
+                    Active = true,
+                    GradeID = request.GradeID
+                };
+                _context.Students.Add(student);
+            }
+
+            _context.SaveChanges();
 
     }
+
+
+
+}
 }

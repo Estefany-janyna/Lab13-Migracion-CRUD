@@ -14,9 +14,8 @@ namespace sem13.Models
         {
             //optionsBuilder.UseSqlServer("Server=LAB1504-04\\SQLEXPRESS;Initial Catalog=torresdb;User ID=userTaipe;Password=12345;trustservercertificate=True"
             // );
-            optionsBuilder.UseSqlServer("Server=LAB1504-04\\SQLEXPRESS; " +
-       "Initial Catalog=torresdb; Integrated Security=True;trustservercertificate=True");
-
+            optionsBuilder.UseSqlServer("Server=DESKTOP-1S7B1NE\\SQLEXPRESS; " +
+       "Initial Catalog=taipedb; Integrated Security=True;trustservercertificate=True");
         }
 
     }
